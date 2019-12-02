@@ -181,7 +181,7 @@ module FastJsonapi
       end
 
       def attributes(*attributes_list, &block)
-        attributes_list = attributes_list.first if attributes_list.first.class.is_a?(Array)
+        attributes_list = attributes_list.first if attributes_list.first.is_a?(Array)
         options = attributes_list.last.is_a?(Hash) ? attributes_list.pop : {}
         self.attributes_to_serialize = {} if self.attributes_to_serialize.nil?
 
